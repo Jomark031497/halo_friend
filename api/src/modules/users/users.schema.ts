@@ -16,7 +16,7 @@ export const users = pgTable("users", {
   githubId: integer("github_id").unique(),
   discordId: varchar("discord_id").unique(),
   username: varchar("username", { length: 256 }).notNull().unique(),
-  email: varchar("email", { length: 256 }).unique(),
+  email: varchar("email", { length: 256 }).unique().notNull(),
   password: varchar("password", { length: 256 }),
   fullName: varchar("full_name", { length: 256 }),
   createdAt: timestamp("created_at").notNull().defaultNow(),
